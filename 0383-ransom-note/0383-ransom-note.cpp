@@ -13,7 +13,7 @@ public:
             i++;
         }
         while (j<magazine.length()){
-            m2[magazine[i]]+=1;
+            m2[magazine[j]]+=1;
             j++;
         }
         for (int i=0;i<ransomNote.length();i++){
