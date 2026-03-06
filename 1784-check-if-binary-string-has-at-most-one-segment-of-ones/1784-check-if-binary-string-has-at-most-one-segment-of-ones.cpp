@@ -1,17 +1,18 @@
 class Solution {
 public:
     bool checkOnesSegment(string s) {
-        if (s.length()==1 && s[0]=='1'){
-            return true;
-        }
-        for (int i=0;i<s.length()-1;i+=1){
-            int x;
-            int a=s[i]-'0',b=s[i+1]-'0';
-            x=a&b;
-            if (x==1){
-                return true;
+       int segments = 0;
+        int n = s.length();
+        for (int i = 0; i < n; ++i) {
+            if (s[i]=='1') {
+                if (i==0 || s[i-1]=='0') {
+                    segments++;
+                }
+                if (segments>1) {
+                    return false;
+                }
             }
         }
-        return false;
+    return true;
     }
 };
